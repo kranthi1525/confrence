@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBEC 2026 — International Conference on Advances in Computing &amp; Engineering | NIT Rourkela</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+    /* ---------- Page header ---------- */
+  .page-head { padding: 56px 0 30px; }
+  .page-head span.tag {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+  .page-head h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 32px;
+    color: var(--navy);
+    border-bottom: 2px solid var(--navy);
+    padding-bottom: 20px;
+  }
+  .page-head p {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    max-width: 540px;
+  }
+
+  section { padding: 34px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--maroon-deep);
+    margin-bottom: 22px;
+  }
+
+  /* ---------- Leadership ---------- */
+  .leader-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .leader-block {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .leader-block .photo {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: var(--line-soft);
+    color: transparent;
+  }
+  .leader-block .role {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+  .leader-block .name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 21px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .leader-block .org {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Convenors ---------- */
+  .convenor-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 18px;
+    column-gap: 40px;
+  }
+  .convenor-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .convenor-item .photo {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: var(--line-soft);
+    color: transparent;
+  }
+  .convenor-item .info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .convenor-item .name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .convenor-item .mail {
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    margin-top: 1px;
+  }
+
+  /* ---------- Committee Members ---------- */
+  .member-list {
+    columns: 2;
+    column-gap: 48px;
+  }
+  .member-row {
+    break-inside: avoid;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .member-row .name {
+    font-size: 13.5px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .member-row .rank {
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  @media (max-width: 640px) {
+    .leader-grid { grid-template-columns: 1fr; gap: 24px; }
+    .convenor-list { grid-template-columns: 1fr; }
+    .member-list { columns: 1; }
+    .page-head h1 { font-size: 25px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header id="siteHeader">
+  <div class="headerRow">
+    <a href="#" class="brand">
+      <span class="brand-logo"><img src="assets/logos/Logo.svg" alt=""></span>
+      <span class="brand-text"><b>IBEC 2026</b><span>NIT Rourkela</span></span>
+    </a>
+    <ul class="primaryNav">
+      <li><a href="./">Home</a></li>
+      <li><a href="./#about">About</a></li>
+      <li><a href="./#events">Events</a></li>
+      <li><a href="important_dates.html">Important Dates</a></li>
+      <li><a href="registration.html">Registration</a></li>
+      <li><a href="comittee.html" class="active">Committee</a></li>
+      <li><a href="./#contact">Contact</a></li>
+
+      <button class="menuButton" id="menuButton" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    </ul>
+    
+  </div>
+</header>
+
+<div class="mobileNav" id="mobileNav">
+  <div class="mobileNavBody">
+    <button class="closeMobile" id="closeMobile" aria-label="Close menu">✕</button>
+    <ul>
+      <li><a href="./">Home</a></li>
+      <li><a href="./#about">About</a></li>
+      <li><a href="important_dates.html">Important Dates</a></li>
+      <li><a href="comittee.html" class="active">Committee</a></li>
+      <li><a href="registration.html">Registration</a></li>
+      <li><a href="./#contact">Contact</a></li>
+    </ul>
+    <a href="registration.html" class="mobileNavCta">Register Now</a>
+  </div>
+</div>
+
+
+
+<div class="wrap">
+  <div class="page-head">
+    <span class="tag">Conference 2026</span>
+    <h1>Organizing Committee</h1>
+    <p>The following faculty and staff of the Department of Biotechnology and Medical Engineering are responsible for organizing and coordinating the conference.</p>
+  </div>
+
+  <section>
+    <div class="leader-grid">
+      <div class="leader-block">
+        <img class="photo" src="assets/images/committee/patron.jpg" alt="Prof. K. Umamaheshwar Rao">
+        <div>
+          <div class="role">Patron</div>
+          <div class="name">Prof. K. Umamaheshwar Rao</div>
+          <div class="org">Director, NIT Rourkela</div>
+        </div>
+      </div>
+      <div class="leader-block">
+        <img class="photo" src="assets/images/committee/chairman.jpg" alt="Prof. Devendra Verma">
+        <div>
+          <div class="role">Chairman</div>
+          <div class="name">Prof. Devendra Verma</div>
+          <div class="org">Head of Department, Biotechnology &amp; Medical Engineering</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Convenors</div>
+    <div class="convenor-list">
+      <div class="convenor-item">
+        <img class="photo" src="assets/images/committee/prasoon-kumar.jpg" alt="Prof. Prasoon Kumar">
+        <div class="info"><span class="name">Prof. Prasoon Kumar</span><span class="mail">kumarprasoon@nitrkl.ac.in</span></div>
+      </div>
+      <div class="convenor-item">
+        <img class="photo" src="assets/images/committee/mirza-khalid-baig.jpg" alt="Prof. Mirza Khalid Baig">
+        <div class="info"><span class="name">Prof. Mirza Khalid Baig</span><span class="mail">baigm@nitrkl.ac.in</span></div>
+      </div>
+      <div class="convenor-item">
+        <img class="photo" src="assets/images/committee/amrita-singh.jpg" alt="Prof. Amrita Singh">
+        <div class="info"><span class="name">Prof. Amrita Singh</span><span class="mail">singham@nitrkl.ac.in</span></div>
+      </div>
+      <div class="convenor-item">
+        <img class="photo" src="assets/images/committee/anamika-singh.jpg" alt="Prof. Anamika Singh">
+        <div class="info"><span class="name">Prof. Anamika Singh</span><span class="mail">singhanamika@nitrkl.ac.in</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Committee Members</div>
+    <div class="member-list">
+      <div class="member-row"><span class="name">A Thirugnanam</span><span class="rank">Professor</span></div>
+      <div class="member-row"><span class="name">Amit Biswas</span><span class="rank">Associate Professor</span></div>
+      <div class="member-row"><span class="name">Angana Sarkar</span><span class="rank">Associate Professor</span></div>
+      <div class="member-row"><span class="name">Anju R. Babu</span><span class="rank">Assistant Professor</span></div>
+      <div class="member-row"><span class="name">Bala Chakravarthy Neelapu</span><span class="rank">Assistant Professor</span></div>
+      <div class="member-row"><span class="name">Balasubramanian P</span><span class="rank">Associate Professor</span></div>
+      <div class="member-row"><span class="name">Bibhukalyan Prasad Nayak</span><span class="rank">Assistant Professor</span></div>
+      <div class="member-row"><span class="name">Bikash Chandra Maharaj</span><span class="rank">Assistant Professor</span></div>
+      <div class="member-row"><span class="name">Earu Banoth</span><span class="rank">Assistant Professor</span></div>
+      <div class="member-row"><span class="name">Kasturi Dutta</span><span class="rank">Associate Professor</span></div>
+      <div class="member-row"><span class="name">Krishna Pramanik</span><span class="rank">Professor</span></div>
+      <div class="member-row"><span class="name">Kunal Pal</span><span class="rank">Professor</span></div>
+      <div class="member-row"><span class="name">Lohit Kumar Srinivas Gujjala</span><span class="rank">Assistant Professor</span></div>
+      <div class="member-row"><span class="name">Mukesh Kumar Gupta</span><span class="rank">Professor</span></div>
+      <div class="member-row"><span class="name">Nandini Sarkar</span><span class="rank">Associate Professor</span></div>
+      <div class="member-row"><span class="name">Nivedita Patra</span><span class="rank">Associate Professor</span></div>
+      <div class="member-row"><span class="name">Ravi Kant Avvari</span><span class="rank">Assistant Professor</span></div>
+      <div class="member-row"><span class="name">Sivaraman J.</span><span class="rank">Assistant Professor</span></div>
+      <div class="member-row"><span class="name">Subhankar Paul</span><span class="rank">Professor</span></div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="contact">
+  <div class="footerTop">
+
+    <div class="footerCol">
+      <div class="footerBrand">
+        <span class="brand-emblem">IC</span>
+        <div><b>IBEC 2026</b><span>NIT Rourkela</span></div>
+      </div>
+      <p>An international platform for researchers and industry to present and discuss advances in computing and engineering, hosted at NIT Rourkela.</p>
+      <div class="footerSocials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div class="footerCol">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="./#about">About the Conference</a></li>
+        <li><a href="important_dates.html">Important Dates</a></li>
+        <li><a href="comittee.html">Organizing Committee</a></li>
+        <li><a href="registration.html">Registration</a></li>
+      </ul>
+    </div>
+
+    <div class="footerCol">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="registration.html">Call for Papers</a></li>
+        <li><a href="registration.html">Author Guidelines</a></li>
+        <li><a href="registration.html">Registration Fees</a></li>
+        <li><a href="./#contact">Accommodation</a></li>
+      </ul>
+    </div>
+
+    <div class="footerCol">
+      <h4>Contact</h4>
+      <ul class="footerContact">
+        <li><i class="fa-solid fa-location-dot"></i> National Institute of Technology, Rourkela, Odisha 769008, India</li>
+        <li><i class="fa-solid fa-envelope"></i> IBEC2026@nitrkl.ac.in</li>
+        <li><i class="fa-solid fa-phone"></i> +91 661 246 2000</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footerBottom">
+    <span>© 2026 IBEC, NIT Rourkela. All rights reserved.</span>
+    <div>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script >
+    // ---- sticky header shadow on scroll ----
+  const siteHeader = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    siteHeader.style.boxShadow = window.scrollY > 40 ? '0 6px 22px rgba(8,21,39,0.1)' : 'none';
+  });
+
+  // ---- mobile menu ----
+  document.getElementById('menuButton').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.add('isOpen');
+  });
+  document.getElementById('closeMobile').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.remove('isOpen');
+  });
+  document.querySelectorAll('.mobileNav a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('isOpen'));
+  });
+
+</script>
+
+</body>
+</html>
