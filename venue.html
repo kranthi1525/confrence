@@ -10,22 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .hero_subpage{
-        background-image:
-            linear-gradient(180deg, rgba(10,27,41,0.72) 0%, rgba(10,27,41,0.8) 55%, rgba(8,21,39,1) 100%),
-            url('assets/banners/about-2.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        min-height: 320px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 90px 32px 70px;
-        color: #fff;
-    }
-
+    h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 34px;
+    color: var(--navy);
+    margin-bottom: 12px;
+    text-align: center;
+  }
 </style>
 </head>
 <body>
@@ -50,10 +42,10 @@
       <li><a href="keynotes.html">Keynote Speakers</a></li>
       <li class="hasDropdown"><a href="comittee.html">Committee <i class="fa-solid fa-chevron-down"></i></a><ul class="dropdownMenu"><li><a href="comittee.html">Organizing Committee</a></li><li><a href="comittee.html#advisory">Advisory Committee</a></li><li><a href="comittee.html#international">International Committee</a></li></ul></li>
       <li class="hasDropdown"><a href="registration.html">Submissions <i class="fa-solid fa-chevron-down"></i></a><ul class="dropdownMenu"><li><a href="topicsandtracks.html">Call for Papers</a></li><li><a href="registration.html#guidelines">Author Guidelines</a></li><li><a href="assets/downloads/papertemplate.pdf">Paper Templates</a></li><li><a href="registration.html">Submission Portal</a></li></ul></li>
-      <li><a href="important_dates.html" class="active">Dates</a></li>
+      <li><a href="important_dates.html">Dates</a></li>
       <li><a href="program.html">Program</a></li>
       <li><a href="./#sponsors">Sponsors</a></li>
-      <li><a href="venue.html">Venue</a></li>
+      <li><a href="venue.html" class="active">Venue</a></li>
       <li><a href="registration.html">Registration</a></li>
     </ul>
   </div>
@@ -98,52 +90,103 @@
      ============================================================ -->
 <section class="hero_subpage" id="home">
     <div class="hero_content">
-<h1>Important Dates</h1>
-    <!-- <p>Translating bioengineering research for healthcare and society through collaboration, innovation, and interdisciplinary discovery.</p> -->
+<h1>Confrence Venue</h1>
+    <!-- <p>Schedule & Sessions Information will be updated soon.</p> -->
     </div>
     
 </section>
+
+
+
 <!-- ============================================================
-     IMPORTANT DATES
+     ABOUT
      ============================================================ -->
-<section class="datesSection" id="dates">
-  <div class="wrap">
-    <div class="sectionHead">
-      <span class="eyebrow" style="justify-content:center;">Mark Your Calendar</span>
-      <h2>Important Dates</h2>
-      <p>Key deadlines for authors and delegates planning to attend IBEC 2026.</p>
+<section class="aboutSection" id="about">
+
+    <div class="wrap aboutGrid">
+        <img src="assets/banners/about-1.jpeg" alt="">
+        <div class="aboutText">
+            <h2>Host Institute: NIT Rourkela</h2>
+            <p>NIT Rourkela (the erstwhile Regional Engineering College, renamed on 26th June 2002) is
+                one of the institutes of national importance under the Ministry of Education, Government
+                of India. The government of India has elevated the Regional Engineering College, Rourkela
+                to an autonomous institution under the name of the National Institute of Technology, Rourkela.</p>
+        </div>
     </div>
 
-    <div class="datesTable">
-      <div class="dateRow">
-        <img src="assets/icons/document.png" alt="" class="datesection_icons">
-        <div class="milestone">Paper Submission Deadline<small>Full-length papers via the online portal</small></div>
-        <div class="when">28 Sept 2025</div>
-      </div>
-      <div class="dateRow">
-        <img src="assets/icons/email.png" alt="" class="datesection_icons">
-        <div class="milestone">Notification of Acceptance<small>Review results communicated to authors</small></div>
-        <div class="when">05 Oct 2026</div>
-      </div>
-      <div class="dateRow">
-        <img src="assets/icons/submission.png" alt="" class="datesection_icons">
-        <div class="milestone">Camera-Ready Submission<small>Final formatted paper &amp; copyright form</small></div>
-        <div class="when">25 Oct 2026</div>
-      </div>
-      <div class="dateRow">
-        <img src="assets/icons/calender.png" alt="" class="datesection_icons">
-        <div class="milestone">Regular Registration Closes<small>Last date for delegate registration</small></div>
-        <div class="when">01 Nov 2026</div>
-      </div>
-      <div class="dateRow">
-        <img src="assets/icons/finish-flag.png" alt="" class="datesection_icons">
-        <div class="milestone">Conference Dates<small>Main event at NIT Rourkela campus</small></div>
-        <div class="when">10–12 Dec 2026</div>
-      </div>
+    <div class="wrap" style="padding: 20px 10px;text-align: center;">
+       
+    <h2>Campus Location</h2>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps?q=National+Institute+of+Technology+Rourkela&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
     </div>
-  </div>
+    <p class="map-caption">Route from Rourkela Railway Station to NIT Rourkela — approximately 10 km, 20–25 minutes by road.</p>
+ 
+    </div>
+
+    
 </section>
 
+<section class="whitesection">
+    <div class="wrap">
+        <h2>Getting Here</h2>
+            <div class="travel-grid">
+            <div class="travel-item">
+                <div class="mode">By Train</div>
+                <h3>Rourkela Railway Station</h3>
+                <p>The nearest railway station is Rourkela (ROU), approximately 10 km from the campus. Auto-rickshaws are readily available, with an approximate fare of ₹150.</p>
+            </div>
+            <div class="travel-item">
+                <div class="mode">By Air</div>
+                <h3>Veer Surendra Sai Airport</h3>
+                <p>The nearest airport is Veer Surendra Sai Airport, Jharsuguda (JRG), approximately 130 km away. Taxis and buses are available from the airport to Rourkela.</p>
+            </div>
+            <div class="travel-item">
+                <div class="mode">By Road</div>
+                <h3>Biju Expressway</h3>
+                <p>NIT Rourkela is well connected by road and is located on the Biju Expressway, providing easy access from major cities.</p>
+            </div>
+        </div>
+    </div>
+   
+  </section>
+
+
+  <section class="whitesection">
+    <div class="wrap">
+        <h2>Accommodation</h2>
+        <div class="stay-grid">
+        <div class="stay-item">
+            <figure>
+            <img src="assets/banners/girls_hostel_banner.jpg" alt="Girls' Hostel">
+            </figure>
+            <div class="cap-name">Girls' Hostel</div>
+            <div class="cap-desc">Comfortable and secure accommodation for female students.</div>
+        </div>
+        <div class="stay-item">
+            <figure>
+            <img src="assets/banners/boys_hostel_banner.jpg" alt="Boys' Hostel">
+            </figure>
+            <div class="cap-name">Boys' Hostel</div>
+            <div class="cap-desc">Well equipped and spacious rooms for male students.</div>
+        </div>
+        <div class="stay-item">
+            <figure>
+            <img src="assets/banners/faculty_guesthouse_banner.avif" alt="Faculty Guest House">
+            </figure>
+            <div class="cap-name">Faculty Guest House</div>
+            <div class="cap-desc">Exclusive and serene guest house for esteemed faculty members.</div>
+        </div>
+        </div>
+        <p class="stay-note">Accommodation will be provided within the NIT Rourkela campus. Students will be accommodated in the respective hostels, and faculty members will be provided with rooms in the guest house. We strive to ensure a comfortable and pleasant stay for all our attendees.</p>
+  
+    </div>
+   </section>
 
 <!-- ============================================================
      FOOTER
@@ -229,6 +272,7 @@
       btn.parentElement.classList.toggle('isOpen');
     });
   });
+
 
 </script>
 

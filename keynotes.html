@@ -9,24 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-  .hero_subpage{
-        background-image:
-            linear-gradient(180deg, rgba(10,27,41,0.72) 0%, rgba(10,27,41,0.8) 55%, rgba(8,21,39,1) 100%),
-            url('assets/banners/about-2.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        min-height: 320px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 90px 32px 70px;
-        color: #fff;
-    }
-
-</style>
 </head>
 <body>
 
@@ -47,10 +29,10 @@
     <ul class="primaryNav">
       <li><a href="./">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="keynotes.html">Keynote Speakers</a></li>
+      <li><a href="keynotes.html" class="active">Keynote Speakers</a></li>
       <li class="hasDropdown"><a href="comittee.html">Committee <i class="fa-solid fa-chevron-down"></i></a><ul class="dropdownMenu"><li><a href="comittee.html">Organizing Committee</a></li><li><a href="comittee.html#advisory">Advisory Committee</a></li><li><a href="comittee.html#international">International Committee</a></li></ul></li>
       <li class="hasDropdown"><a href="registration.html">Submissions <i class="fa-solid fa-chevron-down"></i></a><ul class="dropdownMenu"><li><a href="topicsandtracks.html">Call for Papers</a></li><li><a href="registration.html#guidelines">Author Guidelines</a></li><li><a href="assets/downloads/papertemplate.pdf">Paper Templates</a></li><li><a href="registration.html">Submission Portal</a></li></ul></li>
-      <li><a href="important_dates.html" class="active">Dates</a></li>
+      <li><a href="important_dates.html">Dates</a></li>
       <li><a href="program.html">Program</a></li>
       <li><a href="./#sponsors">Sponsors</a></li>
       <li><a href="venue.html">Venue</a></li>
@@ -93,58 +75,212 @@
 </div>
 </div>
 
+
 <!-- ============================================================
-     HEADER — background
+     HERO — carousel background
      ============================================================ -->
 <section class="hero_subpage" id="home">
     <div class="hero_content">
-<h1>Important Dates</h1>
-    <!-- <p>Translating bioengineering research for healthcare and society through collaboration, innovation, and interdisciplinary discovery.</p> -->
+<h1>Keynote Speakers</h1>
+    <p>IBEC 2026 brings together leading voices in bioengineering to share where translational research is headed next.</p>
     </div>
     
 </section>
-<!-- ============================================================
-     IMPORTANT DATES
-     ============================================================ -->
-<section class="datesSection" id="dates">
+
+<section class="keynoteSection" id="keynote-speakers">
   <div class="wrap">
     <div class="sectionHead">
-      <span class="eyebrow" style="justify-content:center;">Mark Your Calendar</span>
-      <h2>Important Dates</h2>
-      <p>Key deadlines for authors and delegates planning to attend IBEC 2026.</p>
+      <span class="eyebrow" style="justify-content:center;">Plenary Sessions</span>
+      <h2>Keynote Speakers</h2>
+      <p></p>
     </div>
 
-    <div class="datesTable">
-      <div class="dateRow">
-        <img src="assets/icons/document.png" alt="" class="datesection_icons">
-        <div class="milestone">Paper Submission Deadline<small>Full-length papers via the online portal</small></div>
-        <div class="when">28 Sept 2025</div>
-      </div>
-      <div class="dateRow">
-        <img src="assets/icons/email.png" alt="" class="datesection_icons">
-        <div class="milestone">Notification of Acceptance<small>Review results communicated to authors</small></div>
-        <div class="when">05 Oct 2026</div>
-      </div>
-      <div class="dateRow">
-        <img src="assets/icons/submission.png" alt="" class="datesection_icons">
-        <div class="milestone">Camera-Ready Submission<small>Final formatted paper &amp; copyright form</small></div>
-        <div class="when">25 Oct 2026</div>
-      </div>
-      <div class="dateRow">
-        <img src="assets/icons/calender.png" alt="" class="datesection_icons">
-        <div class="milestone">Regular Registration Closes<small>Last date for delegate registration</small></div>
-        <div class="when">01 Nov 2026</div>
-      </div>
-      <div class="dateRow">
-        <img src="assets/icons/finish-flag.png" alt="" class="datesection_icons">
-        <div class="milestone">Conference Dates<small>Main event at NIT Rourkela campus</small></div>
-        <div class="when">10–12 Dec 2026</div>
-      </div>
+    <div class="keynoteList" id="keynoteList">
+
+      
+
     </div>
   </div>
 </section>
 
+<script>
+    const SPEAKER_API =
+    "https://script.google.com/macros/s/AKfycbxkiDZOGrmXEJ1P-q8_-waqKlvUrNpeBkM1tbMB16Tm7K_1_3Qa9d5wTEArDZpYW6E5tg/exec";
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadSpeakers();
+});
+
+
+async function loadSpeakers() {
+
+    const container =
+        document.getElementById("keynoteList");
+
+    if (!container) {
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(SPEAKER_API);
+
+
+        if (!response.ok) {
+            throw new Error(
+                "Failed to fetch speaker data"
+            );
+        }
+
+
+        const speakers =
+            await response.json();
+
+
+        const confirmedSpeakers = speakers
+            .filter(person =>
+                String(person.status)
+                    .trim()
+                    .toLowerCase() === "confirmed"
+            )
+            .sort((a, b) =>
+                Number(a.order) - Number(b.order)
+            );
+
+
+        container.innerHTML = "";
+
+
+        confirmedSpeakers.forEach(person => {
+
+            const row =
+                document.createElement("div");
+
+            row.className = "keynoteRow";
+
+
+            const photoURL = person.photo;
+
+
+            row.innerHTML = `
+
+                <div class="photoWrap">
+
+                    <img
+                        src="${escapeHTML(photoURL)}"
+                        alt="${escapeHTML(person.name)}"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="info">
+
+                    <div class="roleLabel">
+                        ${escapeHTML(person.role)}
+                    </div>
+
+
+                    <div class="nameLine">
+
+                        <span class="name">
+                            ${escapeHTML(person.name)}
+                        </span>
+
+                        <span class="affiliation">
+                            ${escapeHTML(person.affiliation)}
+                        </span>
+
+                    </div>
+
+
+                    <p class="bio">
+                        ${escapeHTML(person.bio)}
+                    </p>
+
+
+                    ${
+                        person.website
+                        ?
+                        `
+                        <a
+                            href="${safeURL(person.website)}"
+                            class="siteLink"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Personal website
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </a>
+                        `
+                        :
+                        ""
+                    }
+
+                </div>
+
+            `;
+
+
+            container.appendChild(row);
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            "Speaker loading error:",
+            error
+        );
+
+        container.innerHTML = `
+            <p>
+                Unable to load speaker information.
+            </p>
+        `;
+
+    }
+
+}
+
+
+function escapeHTML(value) {
+
+    return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+function safeURL(value) {
+
+    const url =
+        String(value || "").trim();
+
+
+    if (
+        url.startsWith("https://") ||
+        url.startsWith("http://")
+    ) {
+        return url;
+    }
+
+
+    return "#";
+
+}
+</script>
 <!-- ============================================================
      FOOTER
      ============================================================ -->
