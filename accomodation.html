@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBEC 2026 — International Conference on Advances in Computing &amp; Engineering | NIT Rourkela</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+    
+
+  :root {
+    --navy: #0E2340;
+    --navy-deep: #081527;
+    --maroon: #7C2233;
+    --maroon-deep: #5C1526;
+    --gold: #C6992F;
+    --cream: #FBF8F2;
+    --paper: #FFFFFF;
+    --ink: #1B2430;
+    --ink-soft: #5B6472;
+    --ink-faint: #939AA6;
+    --line: rgba(14,35,64,0.15);
+    --line-soft: rgba(14,35,64,0.08);
+    --font-display: "Playfair Display", Georgia, serif;
+    --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .wrap_page { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- Page header ---------- */
+  .page-head { padding: 56px 0 30px; }
+  .page-head span.tag {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+  .page-head h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 32px;
+    color: var(--navy);
+    border-bottom: 2px solid var(--navy);
+    padding-bottom: 20px;
+  }
+  .page-head p {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    max-width: 560px;
+  }
+
+  section { padding: 34px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--maroon-deep);
+    margin-bottom: 22px;
+  }
+
+  /* ---------- Accommodation gallery ---------- */
+  .stay-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .stay-item figure { margin: 0; }
+  .stay-item img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid var(--line);
+  }
+  .stay-item .cap-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-top: 12px;
+  }
+  .stay-item .cap-desc {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-top: 3px;
+  }
+
+  .stay-note {
+    margin-top: 26px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    max-width: 760px;
+    line-height: 1.7;
+  }
+
+  /* ---------- Travel ---------- */
+  .travel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .travel-item {
+    padding: 4px 28px;
+    border-left: 1px solid var(--line);
+  }
+  .travel-item:first-child { border-left: none; padding-left: 0; }
+  .travel-item .mode {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+  .travel-item h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .travel-item p {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+
+  /* ---------- Map ---------- */
+  .map-wrap {
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .map-wrap iframe {
+    width: 100%;
+    height: 340px;
+    border: 0;
+    display: block;
+    filter: grayscale(12%) contrast(0.97);
+  }
+  .map-caption {
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    margin-top: 12px;
+  }
+
+  @media (max-width: 800px) {
+    .stay-grid { grid-template-columns: 1fr; }
+    .travel-grid { grid-template-columns: 1fr; row-gap: 24px; }
+    .travel-item { border-left: none; padding-left: 0; padding-top: 20px; border-top: 1px solid var(--line); }
+    .travel-item:first-child { border-top: none; padding-top: 4px; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 18px; }
+    .page-head h1 { font-size: 25px; }
+    .stay-item img { height: 210px; }
+  }
+
+</style>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header id="siteHeader">
+  <div class="headerRow">
+    <a href="#" class="brand">
+      <span class="brand-logo"><img src="assets/logos/Logo.svg" alt=""></span>
+      <span class="brand-text"><b>IBEC 2026</b><span>NIT Rourkela</span></span>
+    </a>
+     <div class="headerActions">
+      <button class="menuButton" id="menuButton" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <ul class="primaryNav">
+      <li><a href="./" class="active">Home</a></li>
+      <li><a href="./#about">About</a></li>
+      <li><a href="./#events">Events</a></li>
+      <li><a href="important_dates.html">Important Dates</a></li>
+      <li><a href="registration.html">Registration</a></li>
+      <li><a href="comittee.html">Committee</a></li>
+      <li><a href="places.html">Places</a></li>
+      <li><a href="./#contact">Contact</a></li>
+    </ul>
+   
+    
+  </div>
+</header>
+
+<div class="mobileNav" id="mobileNav">
+  <div class="mobileNavBody">
+    <button class="closeMobile" id="closeMobile" aria-label="Close menu">✕</button>
+    <ul>
+      <li><a href="./">Home</a></li>
+      <li><a href="./#about">About</a></li>
+      <li><a href="important_dates.html">Important Dates</a></li>
+      <li><a href="comittee.html">Committee</a></li>
+      <li><a href="registration.html">Registration</a></li>
+      <li><a href="places.html">Places</a></li>
+      <li><a href="./#contact">Contact</a></li>
+    </ul>
+    <a href="registration.html" class="mobileNavCta">Register Now</a>
+  </div>
+</div>
+
+
+<section class="hero_second">
+  <div class="wrap">
+    <!-- <div class="eyebrow"></div> -->
+    <h1>Accommodation & Travel Information</h1>
+    <p class="lede" style="padding: 10px;line-height: 20px;">Find all the details you need for your stay and journey to the Bioengineering Conference 2025 at NIT Rourkela.</p>
+    <div class="hero-row">
+      <a href="registration.html" class="btn-primary">Register Now</a>
+      <!-- <span class="deadline-note">Last date of registration: <b>07 Dec 2025</b></span> -->
+    </div>
+  </div>
+</section>
+
+
+
+<div class="wrap_page">
+  <div class="page-head">
+    <span class="tag">Conference 2026</span>
+    <h1>Accommodation &amp; Travel Information</h1>
+    <p >Find all the details you need for your stay and journey to the Bioengineering Conference 2025 at NIT Rourkela.</p>
+  </div>
+
+  <section>
+    <div class="section-title">Accommodation</div>
+    <div class="stay-grid">
+      <div class="stay-item">
+        <figure>
+          <img src="assets/banners/girls_hostel_banner.jpg" alt="Girls' Hostel">
+        </figure>
+        <div class="cap-name">Girls' Hostel</div>
+        <div class="cap-desc">Comfortable and secure accommodation for female students.</div>
+      </div>
+      <div class="stay-item">
+        <figure>
+          <img src="assets/banners/boys_hostel_banner.jpg" alt="Boys' Hostel">
+        </figure>
+        <div class="cap-name">Boys' Hostel</div>
+        <div class="cap-desc">Well equipped and spacious rooms for male students.</div>
+      </div>
+      <div class="stay-item">
+        <figure>
+          <img src="assets/banners/faculty_guesthouse_banner.avif" alt="Faculty Guest House">
+        </figure>
+        <div class="cap-name">Faculty Guest House</div>
+        <div class="cap-desc">Exclusive and serene guest house for esteemed faculty members.</div>
+      </div>
+    </div>
+    <p class="stay-note">Accommodation will be provided within the NIT Rourkela campus. Students will be accommodated in the respective hostels, and faculty members will be provided with rooms in the guest house. We strive to ensure a comfortable and pleasant stay for all our attendees.</p>
+  </section>
+
+  <section>
+    <div class="section-title">Getting Here</div>
+    <div class="travel-grid">
+      <div class="travel-item">
+        <div class="mode">By Train</div>
+        <h3>Rourkela Railway Station</h3>
+        <p>The nearest railway station is Rourkela (ROU), approximately 10 km from the campus. Auto-rickshaws are readily available, with an approximate fare of ₹150.</p>
+      </div>
+      <div class="travel-item">
+        <div class="mode">By Air</div>
+        <h3>Veer Surendra Sai Airport</h3>
+        <p>The nearest airport is Veer Surendra Sai Airport, Jharsuguda (JRG), approximately 130 km away. Taxis and buses are available from the airport to Rourkela.</p>
+      </div>
+      <div class="travel-item">
+        <div class="mode">By Road</div>
+        <h3>Biju Expressway</h3>
+        <p>NIT Rourkela is well connected by road and is located on the Biju Expressway, providing easy access from major cities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Campus Location</div>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps?q=National+Institute+of+Technology+Rourkela&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="map-caption">Route from Rourkela Railway Station to NIT Rourkela — approximately 10 km, 20–25 minutes by road.</p>
+  </section>
+</div>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="contact">
+  <div class="footerTop">
+
+    <div class="footerCol">
+      <div class="footerBrand">
+        <span class="brand-emblem">IC</span>
+        <div><b>IBEC 2026</b><span>NIT Rourkela</span></div>
+      </div>
+      <p>An international platform for researchers and industry to present and discuss advances in Bio-engineering, hosted at NIT Rourkela.</p>
+      <div class="footerSocials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div class="footerCol">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="./#about">About the Conference</a></li>
+        <li><a href="important_dates.html">Important Dates</a></li>
+        <li><a href="comittee.html">Organizing Committee</a></li>
+        <li><a href="registration.html">Registration</a></li>
+      </ul>
+    </div>
+
+    <div class="footerCol">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="registration.html">Call for Papers</a></li>
+        <li><a href="registration.html">Author Guidelines</a></li>
+        <li><a href="registration.html">Registration Fees</a></li>
+        <li><a href="./#contact">Accommodation</a></li>
+      </ul>
+    </div>
+
+    <div class="footerCol">
+      <h4>Contact</h4>
+      <ul class="footerContact">
+        <li><i class="fa-solid fa-location-dot"></i> National Institute of Technology, Rourkela, Odisha 769008, India</li>
+        <li><i class="fa-solid fa-envelope"></i> IBEC2026@nitrkl.ac.in</li>
+        <li><i class="fa-solid fa-phone"></i> +91 661 246 2000</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footerBottom">
+    <span>© 2026 IBEC, NIT Rourkela. All rights reserved.</span>
+    <div>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script >
+    // ---- sticky header shadow on scroll ----
+  const siteHeader = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    siteHeader.style.boxShadow = window.scrollY > 40 ? '0 6px 22px rgba(8,21,39,0.1)' : 'none';
+  });
+
+  // ---- mobile menu ----
+  document.getElementById('menuButton').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.add('isOpen');
+  });
+  document.getElementById('closeMobile').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.remove('isOpen');
+  });
+  document.querySelectorAll('.mobileNav a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('isOpen'));
+  });
+
+ 
+</script>
+
+</body>
+</html>

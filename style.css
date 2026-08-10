@@ -493,3 +493,49 @@
     .footerBottom a { margin-left: 0; margin-right: 16px; }
   }
 
+
+
+  /* shared styles  */
+
+  
+  /* ============ HERO ============ */
+  .hero_second {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 56px 0 48px;
+    border-bottom: 3px solid var(--gold);
+  }
+  .hero_second .eyebrow { color: var(--gold-light); }
+  .hero_second h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero_second p.lede {
+    font-size: 14.5px;
+    color: rgba(251,248,242,0.72);
+    max-width: 480px;
+    margin-bottom: 26px;
+  }
+  .hero-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-weight: 700;
+    font-size: 13.5px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: none;
+    transition: background .15s ease;
+  }
+  .btn-primary:hover { background: #E7C878; }
+
+  .deadline-note {
+    font-size: 13px;
+    color: rgba(251,248,242,0.65);
+  }
+  .deadline-note b { color: var(--cream); font-weight: 600; }
