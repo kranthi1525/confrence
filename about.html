@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .hero_subpage{
+    .hero_subpage{
         background-image:
             linear-gradient(180deg, rgba(10,27,41,0.72) 0%, rgba(10,27,41,0.8) 55%, rgba(8,21,39,1) 100%),
             url('assets/banners/about-2.jpg');
@@ -38,7 +38,6 @@
     <a href="#" class="brand">
       <span class="brand-logo">
         <!-- Host-institute emblem. Swap the src below for your NIT Rourkela crest file. -->
-        <!-- <img class="institute-emblem" src="assets/logos/nitrkl-emblem.svg" alt="NIT Rourkela"> -->
         <img src="assets/logos/Logo.svg" alt="IBEC 2026">
       </span>
       <span class="brand-text"><b>IBEC 2026</b><span>NIT Rourkela</span></span>
@@ -49,7 +48,7 @@
     </div>
     <ul class="primaryNav">
       <li><a href="./" >Home</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="about.html" class="active">About</a></li>
       <li class="hasDropdown">
         <a href="./#committee">Keynotes &amp; Tutorials <i class="fa-solid fa-chevron-down"></i></a>
         <ul class="dropdownMenu">
@@ -75,7 +74,7 @@
           <li><a href="registration.html">Submission Portal</a></li>
         </ul>
       </li>
-      <li><a href="important_dates.html" class="active">Dates</a></li>
+      <li><a href="important_dates.html">Dates</a></li>
       <li><a href="program.html">Program</a></li>
       <li><a href="sponsors.html">Sponsors</a></li>
       <li><a href="places.html">Venue</a></li>
@@ -155,56 +154,71 @@
 </div>
 
 <!-- ============================================================
-     HEADER — background
+     HERO — carousel background
      ============================================================ -->
 <section class="hero_subpage" id="home">
     <div class="hero_content">
-<h1>Important Dates</h1>
-    <!-- <p>Translating bioengineering research for healthcare and society through collaboration, innovation, and interdisciplinary discovery.</p> -->
+<h1>About IBEC 2026</h1>
+    <p>Translating bioengineering research for healthcare and society through collaboration, innovation, and interdisciplinary discovery.</p>
     </div>
     
 </section>
-<!-- ============================================================
-     IMPORTANT DATES
-     ============================================================ -->
-<section class="datesSection" id="dates">
-  <div class="wrap">
-    <div class="sectionHead">
-      <span class="eyebrow" style="justify-content:center;">Mark Your Calendar</span>
-      <h2>Important Dates</h2>
-      <p>Key deadlines for authors and delegates planning to attend IBEC 2026.</p>
-    </div>
 
-    <div class="datesTable">
-      <div class="dateRow">
-        <img src="assets/icons/document.png" alt="" class="datesection_icons">
-        <div class="milestone">Paper Submission Deadline<small>Full-length papers via the online portal</small></div>
-        <div class="when">28 Sept 2025</div>
-      </div>
-      <div class="dateRow">
-        <img src="assets/icons/email.png" alt="" class="datesection_icons">
-        <div class="milestone">Notification of Acceptance<small>Review results communicated to authors</small></div>
-        <div class="when">05 Oct 2026</div>
-      </div>
-      <div class="dateRow">
-        <img src="assets/icons/submission.png" alt="" class="datesection_icons">
-        <div class="milestone">Camera-Ready Submission<small>Final formatted paper &amp; copyright form</small></div>
-        <div class="when">25 Oct 2026</div>
-      </div>
-      <div class="dateRow">
-        <img src="assets/icons/calender.png" alt="" class="datesection_icons">
-        <div class="milestone">Regular Registration Closes<small>Last date for delegate registration</small></div>
-        <div class="when">01 Nov 2026</div>
-      </div>
-      <div class="dateRow">
-        <img src="assets/icons/finish-flag.png" alt="" class="datesection_icons">
-        <div class="milestone">Conference Dates<small>Main event at NIT Rourkela campus</small></div>
-        <div class="when">10–12 Dec 2026</div>
-      </div>
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section class="aboutSection" id="about">
+<div class="wrap" style="margin-bottom: 90px;text-align: justify;max-width: 1200px;">
+    <div class="aboutText">
+      <h2 style="text-align: center;">About the Conference</h2>
+        <p>Bioengineering conference is an annual conference, hosted by the department of
+            Biotechnology and Medical Engineering, NIT Rourkela. This year the conference is going
+            to be held from 10th–12th of November, 2026. The theme of IBEC 2026 is "Translation
+            of Bioengineering Research for Healthcare and Society." This year, our conference
+            aims to mediate a dialogue among researchers, scientists, and engineers for translating
+            bioengineering research into technologies, products and services serving healthcare
+            and society.</p>
+        <p>
+            As Sir Isaac Newton's famous line, "If I have seen further, it is by standing upon
+            the shoulders of giants," also speaks to the foundational role of knowledge sharing,
+            which scientific translation enables. Our speakers from various walks of bioengineering
+            research bring forth the knowledge and expertise to share with scholars, students, industry
+            personnel, etc. There will be a series of plenary and invited talks to apprise the audience on the recent
+            progress in bioengineering research and innovations. To facilitate the active engagement of students,
+            several events like oral presentation, poster presentation, business plan competition,
+            scientific photography, and student–scientist connect sessions will be organised. The conference also invites
+             industry professionals and startups to showcase their products. It will be a cohort where idea and knowledge
+              sharing happens, enriching the audience with a wide spectrum of talks that initiate meaningful dialogue for
+              multi-disciplinary research and innovation.
+        </p>
     </div>
   </div>
-</section>
+    <div class="wrap aboutGrid">
+        <img src="assets/banners/about-1.jpeg" alt="">
+        <div class="aboutText">
+            <h2>About NIT Rourkela</h2>
+            <p>NIT Rourkela (the erstwhile Regional Engineering College, renamed on 26th June 2002) is
+                one of the institutes of national importance under the Ministry of Education, Government
+                of India. The government of India has elevated the Regional Engineering College, Rourkela
+                to an autonomous institution under the name of the National Institute of Technology, Rourkela.</p>
+        </div>
+    </div>
 
+    <div class="wrap aboutGrid">
+        <div class="aboutText">
+            <h2>About the Department</h2>
+            <p>The conference aims to provide an excellent platform for engineers, scientists, researchers,
+                 and professionals to share knowledge and experiences on the dynamics of the interdisciplinary
+                  approaches in solving problems of relevance to bioengineering covering major domains of Biological Innovation,
+                   Technology, Engineering and Sciences. The conference will serve as the best platform to
+                   learn and share new ideas in the area by connecting the stakeholders involved, particularly students,
+                    faculties, engineers, doctors, entrepreneurs, incubators, and enthusiasts.</p>
+        </div>
+        <img src="assets/banners/about-2.jpg" alt="">
+    </div>
+
+    
+</section>
 
 <!-- ============================================================
      FOOTER
