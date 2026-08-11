@@ -3,301 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IBEC 2026 — International Conference on Advances in Computing &amp; Engineering | NIT Rourkela</title>
+<title>IBEC 2026 — International Conference on Bioengineering | NIT Rourkela</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-  :root {
-    --navy: #0E2340;
-    --navy-deep: #081527;
-    --maroon: #7C2233;
-    --maroon-deep: #5C1526;
-    --gold: #C6992F;
-    --gold-deep: #A67C22;
-    --gold-light: #E7C878;
-    --cream: #FBF8F2;
-    --paper: #FFFFFF;
-    --ink: #1B2430;
-    --ink-soft: #5B6472;
-    --ink-faint: #939AA6;
-    --line: rgba(14,35,64,0.12);
-    --line-soft: rgba(14,35,64,0.07);
-    --radius: 12px;
-    --font-display: "Playfair Display", Georgia, serif;
-    --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { width: 100%; overflow-x: hidden; }
-  body { font-family: var(--font-body); background: var(--cream); color: var(--ink); line-height: 1.55; }
-  a { text-decoration: none; color: inherit; }
-  ul { list-style: none; }
-  img { display: block; max-width: 100%; }
-  button { font-family: inherit; cursor: pointer; }
-
-  .wrap { max-width: 980px; margin: 0 auto; padding: 0 28px; }
-
-  .eyebrow {
-    font-size: 12px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--gold-deep);
-    margin-bottom: 10px;
-  }
-
-  .sectionHead { margin-bottom: 36px; }
-  .sectionHead h2 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 26px;
-    color: var(--navy);
-    margin-bottom: 8px;
-  }
-  .sectionHead p { font-size: 14px; color: var(--ink-soft); max-width: 480px; }
-
-  /* ============ HERO ============ */
-  .hero_second {
-    background: var(--navy);
-    color: var(--cream);
-    padding: 56px 0 48px;
-    border-bottom: 3px solid var(--gold);
-  }
-  .hero_second .eyebrow { color: var(--gold-light); }
-  .hero_second h1 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(28px, 4vw, 38px);
-    line-height: 1.2;
-    margin-bottom: 12px;
-  }
-  .hero_second p.lede {
-    font-size: 14.5px;
-    color: rgba(251,248,242,0.72);
-    max-width: 480px;
-    margin-bottom: 26px;
-  }
-  .hero-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-
-  .btn-primary {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--navy-deep);
-    font-weight: 700;
-    font-size: 13.5px;
-    padding: 12px 24px;
-    border-radius: 6px;
-    border: none;
-    transition: background .15s ease;
-  }
-  .btn-primary:hover { background: var(--gold-light); }
-
-  .deadline-note {
-    font-size: 13px;
-    color: rgba(251,248,242,0.65);
-  }
-  .deadline-note b { color: var(--cream); font-weight: 600; }
-
-  /* ============ FEE SECTION ============ */
-  .fees { padding: 20px 0 90px; position: relative; }
-
-  .toggle-row { display: flex; justify-content: center; margin-bottom: 40px; }
-  .toggle {
-    display: inline-flex; background: var(--paper); border: 1px solid var(--line);
-    border-radius: 999px; padding: 5px; box-shadow: 0 2px 8px rgba(14,35,64,0.05);
-  }
-  .toggle button {
-    border: none; background: transparent; padding: 10px 26px; border-radius: 999px;
-    font-size: 13.5px; font-weight: 700; letter-spacing: 0.03em; color: var(--ink-soft);
-    transition: all .25s ease;
-  }
-  .toggle button.active { background: var(--navy); color: var(--cream); box-shadow: 0 6px 16px -4px rgba(14,35,64,0.5); }
-
-  .fee-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-  }
-  .fee-card {
-    position: relative;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 30px 26px 26px;
-    overflow: hidden;
-    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-  }
-  .fee-card:hover { transform: translateY(-6px); box-shadow: 0 22px 40px -18px rgba(14,35,64,0.25); border-color: transparent; }
- 
-  .fee-card .tag {
-    font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--gold-deep); margin-bottom: 6px;
-  }
-  .fee-card h3 { font-family: var(--font-display); font-size: 24px; color: var(--navy); margin-bottom: 18px; }
-  .fee-card .price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
-  .fee-card .price .sym { font-size: 30px; font-weight: 700; color: var(--maroon); }
-  .fee-card .price .amt {  font-size: 42px; font-weight: 700; color: var(--ink); }
-  .fee-card .price.hidden-mode { display: none; }
-  .fee-card .note { font-size: 12.5px; color: var(--ink-faint); margin-top: 10px; }
-
-  .fee-card.industry { background: var(--navy); border-color: var(--navy); }
-  .fee-card.industry .tag { color: var(--gold-light); }
-  .fee-card.industry h3, .fee-card.industry .price .amt { color: var(--cream); }
-  .fee-card.industry .price .sym { color: var(--gold-light); }
-  .fee-card.industry .note { color: rgba(251,248,242,0.55); }
-
-  .free-strip {
-    margin-top: 26px;
-    display: flex; align-items: center; gap: 14px;
-    background: linear-gradient(135deg, rgba(124,34,51,0.06), rgba(198,153,47,0.08));
-    border: 1px solid var(--line-soft);
-    border-radius: 12px;
-    padding: 16px 22px;
-    font-size: 14px; color: var(--maroon-deep); font-weight: 600;
-  }
-  .free-strip svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--maroon); }
-/* ============ INCLUDES ============ */
-  .includes { padding: 20px 0 100px; }
-  .includes-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 24px;
-    align-items: stretch;
-  }
-  .panel {
-    border-radius: var(--radius);
-    padding: 34px;
-    position: relative;
-  }
-  .panel-offline {
-    background: var(--paper);
-    border: 1.5px solid var(--navy);
-  }
-  .panel-online {
-    background: var(--navy-deep);
-    color: var(--cream);
-    background-image:
-      radial-gradient(circle at 90% 0%, rgba(198,153,47,0.18), transparent 55%);
-  }
-  .panel h3 {
-    font-family: var(--font-display);
-    font-size: 21px;
-    margin-bottom: 22px;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .panel-offline h3 { color: var(--navy); }
-  .panel-online h3 { color: var(--cream); }
-  .panel h3 .ico {
-    width: 34px; height: 34px; border-radius: 9px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-  .panel-offline h3 .ico { background: linear-gradient(135deg, var(--gold-light), var(--gold-deep)); color: var(--navy-deep); }
-  .panel-online h3 .ico { background: rgba(198,153,47,0.2); color: var(--gold-light); border: 1px solid rgba(198,153,47,0.4); }
-
-  .check-list li {
-    display: flex; align-items: flex-start; gap: 12px;
-    font-size: 14px; padding: 10px 0;
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .panel-online .check-list li { border-bottom: 1px solid rgba(251,248,242,0.08); color: rgba(251,248,242,0.85); }
-  .check-list li:last-child { border-bottom: none; }
-  .check-list .tick {
-    width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    margin-top: 1px;
-  }
-  .panel-offline .check-list .tick { background: rgba(124,34,51,0.1); color: var(--maroon); }
-  .panel-online .check-list .tick { background: rgba(198,153,47,0.18); color: var(--gold-light); }
-
-  /* ============ REGISTER / PAYMENT ============ */
-  .register { padding: 40px 0 70px; }
-  .pay-card {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    display: grid;
-    grid-template-columns: 240px 1fr;
-  }
-  .pay-qr {
-    padding: 32px 28px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 14px;
-    text-align: center;
-    border-right: 1px solid var(--line);
-    background: var(--line-soft);
-  }
-  .qr-frame {
-    background: var(--paper);
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid var(--line);
-  }
-  .qr-frame img { width: 148px; height: 148px; }
-  .pay-qr p {
-    font-size: 12.5px; color: var(--ink-soft); max-width: 190px;
-  }
-
-  .pay-details { padding: 30px 32px; }
-  .pay-details h3 { font-family: var(--font-display); font-size: 18px; color: var(--navy); margin-bottom: 18px; }
-  .pay-row {
-    display: flex; justify-content: space-between; align-items: baseline;
-    padding: 11px 0;
-    border-bottom: 1px solid var(--line-soft);
-    font-size: 13.5px;
-  }
-  .pay-row:last-of-type { border-bottom: none; }
-  .pay-row .k { color: var(--ink-faint); }
-  .pay-row .v { color: var(--ink); font-weight: 600; text-align: right; }
-  .pay-row .v.mono { font-family: "Inter", monospace; letter-spacing: 0.01em; }
-
-  .cta-row { margin-top: 22px; }
-  .btn-navy {
-    display: inline-block;
-    background: var(--navy); color: var(--cream);
-    font-weight: 600; font-size: 13.5px;
-    padding: 12px 24px; border-radius: 6px; border: none;
-    transition: background .15s ease;
-  }
-  .btn-navy:hover { background: var(--navy-deep); }
-
-  footer {
-    border-top: 1px solid var(--line);
-    text-align: center;
-    padding: 22px 0;
-    font-size: 12.5px;
-    color: var(--ink-faint);
-  }
-
-  @media (max-width: 720px) {
-    .fee-table { display: block; overflow-x: auto; }
-    .includes-grid { grid-template-columns: 1fr; }
-    .pay-card { grid-template-columns: 1fr; }
-    .pay-qr { border-right: none; border-bottom: 1px solid var(--line); }
-  }
-  @media (max-width: 480px) {
-    .wrap { padding: 0 18px; }
-    .hero { padding: 40px 0 36px; }
-    .fee-table th, .fee-table td { padding: 12px 14px; font-size: 13px; }
-  }
-
-   @media (max-width: 880px) {
-    .hero-grid { grid-template-columns: 1fr; }
-    .hero-badge { display: none; }
-    .fee-cards { grid-template-columns: 1fr; }
-    .includes-grid { grid-template-columns: 1fr; }
-    .pay-card { grid-template-columns: 1fr; }
-    .pay-qr { padding: 36px 24px; }
-  }
-  @media (max-width: 560px) {
-    .sectionHead h2 { font-size: 27px; }
-    .pay-details { padding: 30px 24px; }
-  }
-</style>
 </head>
 <body>
 
-    
 <!-- ============================================================
      HEADER
      ============================================================ -->
@@ -317,15 +31,29 @@
       <li><a href="about.html">About</a></li>
       <li><a href="keynotes.html">Keynote Speakers</a></li>
       <li class="hasDropdown"><a href="comittee.html">Committee <i class="fa-solid fa-chevron-down"></i></a><ul class="dropdownMenu"><li><a href="comittee.html">Organizing Committee</a></li><li><a href="comittee.html#advisory">Advisory Committee</a></li><li><a href="comittee.html#international">International Committee</a></li></ul></li>
-      <li class="hasDropdown"><a href="registration.html">Submissions <i class="fa-solid fa-chevron-down"></i></a><ul class="dropdownMenu"><li><a href="topicsandtracks.html">Call for Papers</a></li><li><a href="registration.html#guidelines">Author Guidelines</a></li><li><a href="assets/downloads/papertemplate.pdf">Paper Templates</a></li><li><a href="registration.html">Submission Portal</a></li></ul></li>
+      <li class="hasDropdown"><a href="#">Submissions <i class="fa-solid fa-chevron-down"></i></a><ul class="dropdownMenu"><li><a href="topicsandtracks.html">Call for Papers</a></li><li><a href="registration.html#guidelines">Author Guidelines</a></li><li><a href="assets/downloads/papertemplate.pdf">Paper Templates</a></li><li><a href="registration.html">Submission Portal</a></li></ul></li>
       <li><a href="important_dates.html">Dates</a></li>
-      <li><a href="program.html">Program</a></li>
+      <li><a href="program.html" >Program</a></li>
       <li><a href="./#sponsors">Sponsors</a></li>
       <li><a href="venue.html">Venue</a></li>
       <li><a href="registration.html" class="active">Registration</a></li>
     </ul>
   </div>
 </header>
+
+<!-- ============================================================
+     ANNOUNCEMENT TICKER
+     ============================================================ -->
+<div class="announceBar">
+  <div class="announceTrack">
+    <span>Paper Submission Deadline: 15 Dec 2025</span><span class="dot">•</span>
+    <span>Conference Dates: 10–12 November 2026</span><span class="dot">•</span>
+    <span>Jointly Hosted by the Department of Biotechnology and Medical Engineering, NIT Rourkela</span><span class="dot">•</span>
+    <span>Paper Submission Deadline: 15 Dec 2025</span><span class="dot">•</span>
+    <span>Conference Dates: 10–12 November 2026</span><span class="dot">•</span>
+    <span>Jointly Hosted by the Department of Biotechnology and Medical Engineering, NIT Rourkela</span><span class="dot">•</span>
+  </div>
+</div>
 
 <div class="mobileNav" id="mobileNav">
   <div class="mobileNavBody">
@@ -347,108 +75,90 @@
 </div>
 </div>
 
-<section class="hero_second">
-  <div class="wrap">
-    <div class="eyebrow">Registration Open</div>
-    <h1>Conference Registration</h1>
-    <p class="lede">Register to attend the conference in person or online. See fees, inclusions and payment details below.</p>
-    <div class="hero-row">
-      <a href="#register" class="btn-primary">Register Now</a>
-      <span class="deadline-note">Last date of registration: <b>07 Dec 2025</b></span>
+<!-- ============================================================
+     HEADER — background
+     ============================================================ -->
+<section class="hero_subpage" id="home">
+    <div class="hero_content">
+<h1>Registration</h1>
+    <p>Schedule & Sessions Information will be updated soon.</p>
     </div>
-  </div>
+    
 </section>
 
-
- <!-- registration fees section  -->
-
-
-<section class="fees">
+<!-- ============================================================
+     REGISTRATION FEES — two ledger tables
+     ============================================================ -->
+<section class="fees" id="fees">
   <div class="wrap">
-    <div class="sectionHead">
+    <div class="sectionHead centered">
       <div class="eyebrow" style="justify-content:center">Fee Structure</div>
-      <h2>Choose your category</h2>
-      <p>Offline includes stay & meals; online is lecture access with e-certification. Toggle to compare.</p>
+      <h2>Registration Fees</h2>
+      <p style="margin:0 auto;">Fees vary by participant category and delegate origin. Foreign delegates can register for online or in-person attendance.</p>
     </div>
 
-    <div class="toggle-row">
-      <div class="toggle" id="feeToggle">
-        <button type="button" class="active" data-mode="offline">Offline</button>
-        <button type="button" data-mode="online">Online</button>
-      </div>
-    </div>
+    <div class="feesGrid">
 
-    <div class="fee-cards">
-      <div class="fee-card">
-        <div class="tag">Category 01</div>
-        <h3>Students</h3>
-        <div class="price mode-offline"><span class="sym">₹</span><span class="amt">4,000</span></div>
-        <div class="price mode-online hidden-mode"><span class="sym">₹</span><span class="amt">1,500</span></div>
-        <div class="note">Full conference access, kit & certification</div>
-      </div>
-      <div class="fee-card">
-        <div class="tag">Category 02</div>
-        <h3>Faculty</h3>
-        <div class="price mode-offline"><span class="sym">₹</span><span class="amt">6,000</span></div>
-        <div class="price mode-online hidden-mode"><span class="sym">₹</span><span class="amt">3,000</span></div>
-        <div class="note">Full conference access, kit & certification</div>
-      </div>
-      <div class="fee-card">
-        <div class="tag">Category 03</div>
-        <h3>Industry</h3>
-        <div class="price mode-offline"><span class="sym">₹</span><span class="amt">8,000</span></div>
-        <div class="price mode-online hidden-mode"><span class="sym">₹</span><span class="amt">4,000</span></div>
-        <div class="note">Full conference access, kit & certification</div>
-      </div>
-    </div>
-
-    <div class="free-strip">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 7L12 17l-5.5 3.5L8 13.5 3 9l6.5-.5z"/></svg>
-      Registration is completely <strong>free</strong> for students and staff of NIT Rourkela.
-    </div>
-  </div>
-</section>
-
-
-<section class="includes">
-  <div class="wrap">
-    <div class="sectionHead">
-      <div class="eyebrow" style="justify-content:center">What's Included</div>
-      <h2>Everything in your pass</h2>
-    </div>
-
-    <div class="includes-grid">
-      <div class="panel panel-offline">
-        <h3>Offline Participants</h3>
-        <ul class="check-list">
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Food & accommodation for 3 days, including 1 special conference dinner</li>
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Delegate kit for the conference</li>
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Chance to participate in competitions — oral & poster presentations, business plan pitch, photography</li>
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Opportunity to network with industry and academic leaders</li>
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Hard copy certificate</li>
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Abstract published in the abstract book</li>
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Access to all live talks</li>
-        </ul>
+      <div class="tableCard">
+        <div class="tableLabel">
+          <span class="title">Indian Delegates</span>
+          <span class="currency">INR ₹</span>
+        </div>
+        <table class="feeTable indianTable">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th class="num">Fee</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="category">Student</td><td class="num amount">₹ 6,000</td></tr>
+            <tr><td class="category">Academic Faculties</td><td class="num amount">₹ 8,000</td></tr>
+            <tr><td class="category">Research Organizations</td><td class="num amount">₹ 8,000</td></tr>
+            <tr><td class="category">Industry Delegates</td><td class="num amount">₹ 10,000</td></tr>
+            <tr><td class="category">Accompanying Person</td><td class="num amount">₹ 2,000</td></tr>
+          </tbody>
+        </table>
+        <div class="feeFootnote">Fees are per delegate and cover the full three-day conference.</div>
       </div>
 
-      <div class="panel panel-online">
-        <h3>Online Participants</h3>
-        <ul class="check-list">
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Link to attend live lecture sessions</li>
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>E-certificate on completion</li>
-          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Abstract published in the abstract book</li>
-        </ul>
+      <div class="tableCard">
+        <div class="tableLabel">
+          <span class="title">Foreign Delegates</span>
+          <span class="currency">USD $</span>
+        </div>
+        <table class="feeTable foreignTable">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th class="num">Online</th>
+              <th class="num">In-Person</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="category">Student</td><td class="num amount">$150</td><td class="num amount">$300</td></tr>
+            <tr><td class="category">Academic Faculties</td><td class="num amount">$250</td><td class="num amount">$500</td></tr>
+            <tr><td class="category">Research Organizations</td><td class="num amount">$250</td><td class="num amount">$500</td></tr>
+            <tr><td class="category">Industry Delegates</td><td class="num amount">$250</td><td class="num amount">$500</td></tr>
+            <tr><td class="category">Accompanying Person</td><td class="num dash">—</td><td class="num amount">$200</td></tr>
+          </tbody>
+        </table>
+        <div class="feeFootnote">Accompanying-person registration is available for in-person attendance only.</div>
       </div>
+
     </div>
   </div>
 </section>
 
 
+<!-- ============================================================
+     REGISTER / PAYMENT
+     ============================================================ -->
 <section class="register" id="register">
   <div class="wrap">
     <div class="sectionHead">
       <div class="eyebrow">Register Now</div>
-      <h2>Complete your registration</h2>
+      <h2>Complete Your Registration</h2>
       <p>Scan the QR code or transfer directly using the bank details below.</p>
     </div>
 
@@ -466,12 +176,51 @@
         <div class="pay-row"><span class="k">Account Number</span><span class="v mono">36734418111</span></div>
         <div class="pay-row"><span class="k">IFSC Code</span><span class="v mono">SBIN0002109</span></div>
         <div class="cta-row">
-          <button class="btn-navy" type="button">Confirm Registration</button>
+          <button class="btn-navy" type="button">Register Here</button>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
+
+<!-- ============================================================
+     WHAT'S INCLUDED
+     ============================================================ -->
+<section class="includes">
+  <div class="wrap">
+    <div class="sectionHead centered">
+      <div class="eyebrow" style="justify-content:center">What's Included</div>
+      <h2>Everything in Your Pass</h2>
+    </div>
+
+    <div class="includes-grid">
+      <div class="panel panel-offline">
+        <h3>Offline Participants</h3>
+        <ul class="check-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="12" height="12"><path d="M20 6L9 17l-5-5"/></svg></span>Food &amp; accommodation for 3 days, including 1 special conference dinner</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="12" height="12"><path d="M20 6L9 17l-5-5"/></svg></span>Delegate kit for the conference</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="12" height="12"><path d="M20 6L9 17l-5-5"/></svg></span>Chance to participate in competitions — oral &amp; poster presentations, business plan pitch, photography</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="12" height="12"><path d="M20 6L9 17l-5-5"/></svg></span>Opportunity to network with industry and academic leaders</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="12" height="12"><path d="M20 6L9 17l-5-5"/></svg></span>Hard copy certificate</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="12" height="12"><path d="M20 6L9 17l-5-5"/></svg></span>Abstract published in the abstract book</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="12" height="12"><path d="M20 6L9 17l-5-5"/></svg></span>Access to all live talks</li>
+        </ul>
+      </div>
+
+      <div class="panel panel-online">
+        <h3>Online Participants</h3>
+        <ul class="check-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="12" height="12"><path d="M20 6L9 17l-5-5"/></svg></span>Link to attend live lecture sessions</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="12" height="12"><path d="M20 6L9 17l-5-5"/></svg></span>E-certificate on completion</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="12" height="12"><path d="M20 6L9 17l-5-5"/></svg></span>Abstract published in the abstract book</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- ============================================================
      FOOTER
@@ -534,27 +283,10 @@
 </footer>
 
 <script>
-  const toggle = document.getElementById('feeToggle');
-  const buttons = toggle.querySelectorAll('button');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const mode = btn.dataset.mode;
-      document.querySelectorAll('.price').forEach(p => {
-        if (p.classList.contains('mode-' + mode)) {
-          p.classList.remove('hidden-mode');
-        } else {
-          p.classList.add('hidden-mode');
-        }
-      });
-    });
-  });
-
     // ---- sticky header shadow on scroll ----
   const siteHeader = document.getElementById('siteHeader');
   window.addEventListener('scroll', () => {
-    siteHeader.style.boxShadow = window.scrollY > 40 ? '0 6px 22px rgba(8,21,39,0.1)' : 'none';
+    siteHeader.style.boxShadow = window.scrollY > 40 ? '0 6px 22px rgba(8,21,39,0.08)' : 'none';
   });
 
   // ---- mobile menu ----
@@ -567,6 +299,15 @@
   document.querySelectorAll('.mobileNav a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('isOpen'));
   });
+
+  // ---- mobile accordion submenus ----
+  document.querySelectorAll('.mobileSubToggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.classList.toggle('isOpen');
+    });
+  });
+
+
 </script>
 
 </body>

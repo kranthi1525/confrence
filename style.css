@@ -1009,3 +1009,173 @@
     .wrap { padding: 0 18px; }
     .stay-item img { height: 210px; }
   }
+
+  
+  /* ============================================================
+     FEE TABLES — real <table> markup, ledger styling to match
+     the rest of the site (hairline rules, no drop shadows).
+     Two tables instead of one rotated-header table: Indian
+     delegates in ₹, foreign delegates in USD split by mode.
+     ============================================================ */
+  .fees { padding: 20px 0 80px; }
+
+  .feesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 26px;
+    align-items: start;
+  }
+
+  .tableCard {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .tableCard .tableLabel {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 22px;
+    background: var(--navy);
+  }
+  .tableCard .tableLabel span.title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15.5px;
+    color: #fff;
+  }
+  .tableCard .tableLabel span.currency {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--bronze);
+  }
+
+  table.feeTable { width: 100%; border-collapse: collapse; }
+  table.feeTable th {
+    text-align: left;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink-faint);
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--line);
+    background: var(--mist);
+  }
+  table.feeTable th.num, table.feeTable td.num { text-align: right; }
+  table.feeTable td {
+    padding: 15px 22px;
+    font-size: 13.8px;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  table.feeTable tr:last-child td { border-bottom: none; }
+  table.feeTable tr:hover td { background: var(--line-soft); }
+  table.feeTable td.category { font-weight: 600; color: var(--navy); }
+  table.feeTable td.amount { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .indianTable td.amount { color: var(--teal-deep); }
+  .foreignTable td.amount { color: var(--bronze-deep); }
+  .foreignTable td.dash { color: var(--ink-faint); font-weight: 400; text-align: right; }
+
+  .feeFootnote {
+    font-size: 12px; color: var(--ink-faint);
+    padding: 12px 22px 16px;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  /* ============ INCLUDES ============ */
+  .includes { padding: 20px 0 100px; }
+  .includes-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .panel { border-radius: var(--radius); padding: 34px; position: relative; }
+  .panel-offline { background: var(--paper); border: 1.5px solid var(--navy); }
+  .panel-online {
+    background: var(--navy-deep);
+    color: var(--mist);
+    background-image: radial-gradient(circle at 90% 0%, rgba(169,125,61,0.18), transparent 55%);
+  }
+  .panel h3 {
+    font-family: var(--font-display);
+    font-size: 21px;
+    margin-bottom: 22px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .panel-offline h3 { color: var(--navy); }
+  .panel-online h3 { color: #fff; }
+  .panel h3 .ico {
+    width: 34px; height: 34px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .panel-offline h3 .ico { background: linear-gradient(135deg, #D9B36A, var(--bronze-deep)); color: var(--navy-deep); }
+  .panel-online h3 .ico { background: rgba(169,125,61,0.2); color: var(--bronze); border: 1px solid rgba(169,125,61,0.4); }
+
+  .check-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 14px; padding: 10px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .panel-online .check-list li { border-bottom: 1px solid rgba(245,247,248,0.08); color: rgba(245,247,248,0.85); }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list .tick {
+    width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 1px;
+  }
+  .panel-offline .check-list .tick { background: rgba(44,110,103,0.1); color: var(--teal-deep); }
+  .panel-online .check-list .tick { background: rgba(169,125,61,0.18); color: var(--bronze); }
+
+  /* ============ REGISTER / PAYMENT ============ */
+  .register { padding: 40px 0 70px; }
+  .pay-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    display: grid;
+    grid-template-columns: 240px 1fr;
+  }
+  .pay-qr {
+    padding: 32px 28px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 14px; text-align: center;
+    border-right: 1px solid var(--line);
+    background: var(--line-soft);
+  }
+  .qr-frame { background: var(--paper); padding: 10px; border-radius: 8px; border: 1px solid var(--line); }
+  .qr-frame img { width: 148px; height: 148px; }
+  .pay-qr p { font-size: 12.5px; color: var(--ink-soft); max-width: 190px; }
+
+  .pay-details { padding: 30px 32px; }
+  .pay-details h3 { font-family: var(--font-display); font-size: 18px; color: var(--navy); margin-bottom: 18px; }
+  .pay-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 11px 0; border-bottom: 1px solid var(--line-soft); font-size: 13.5px;
+  }
+  .pay-row:last-of-type { border-bottom: none; }
+  .pay-row .k { color: var(--ink-faint); }
+  .pay-row .v { color: var(--ink); font-weight: 600; text-align: right; }
+  .pay-row .v.mono { font-family: "IBM Plex Sans", monospace; letter-spacing: 0.01em; }
+
+  .cta-row { margin-top: 22px; }
+  .btn-navy {
+    display: inline-block; background: var(--navy); color: #fff;
+    font-weight: 600; font-size: 13.5px;
+    padding: 12px 24px; border-radius: 6px; border: none;
+    transition: background .15s ease;
+  }
+  .btn-navy:hover { background: var(--navy-deep); }
+
+  footer#registerFooterSpacer { padding: 22px 0; text-align: center; font-size: 12.5px; color: var(--ink-faint); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 860px) {
+    .feesGrid { grid-template-columns: 1fr; }
+    .includes-grid { grid-template-columns: 1fr; }
+    .pay-card { grid-template-columns: 1fr; }
+    .pay-qr { border-right: none; border-bottom: 1px solid var(--line); }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 18px; }
+    .sectionHead h2 { font-size: 23px; }
+    table.feeTable th, table.feeTable td { padding: 12px 14px; font-size: 12.8px; }
+    .pay-details { padding: 26px 22px; }
+  }
