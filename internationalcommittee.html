@@ -81,33 +81,40 @@
   }
   .advisoryItem .org { font-size: 12.3px; color: var(--ink-soft); line-height: 1.5; }
 
-  /* ---------- International Committee — institution list ---------- */
-  .internationalList { border-top: 1px solid var(--line); }
-  .intlRow {
-    display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 16px;
-    padding: 16px 0; border-bottom: 1px solid var(--line-soft);
+  /* ---------- International Committee — same card, + country + link ---------- */
+  .internationalGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px 30px; }
+  .internationalItem { text-align: center; }
+  .internationalItem .photo {
+    width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
+    margin: 0 auto 14px; border: 1px solid var(--line); background: var(--mist); color: transparent;
   }
-  .intlRow .photo {
-    width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
-    border: 1px solid var(--line); background: var(--mist); color: transparent;
+  .internationalItem .name { font-family: var(--font-display); font-weight: 600; font-size: 15px; color: var(--navy); margin-bottom: 4px; }
+  .internationalItem .org { font-size: 12.3px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 10px; }
+  .internationalItem .country {
+    display: inline-block;
+    font-size: 10.5px; font-weight: 600; color: var(--teal-deep);
+    background: rgba(44,110,103,0.08); padding: 4px 13px; border-radius: 999px;
+    margin-bottom: 10px;
   }
-  .intlRow .name { font-size: 13.6px; font-weight: 600; color: var(--ink); }
-  .intlRow .inst { font-size: 12px; color: var(--ink-faint); margin-top: 2px; }
-  .intlRow .country {
-    font-size: 11px; font-weight: 600; color: var(--teal-deep);
-    background: rgba(44,110,103,0.08); padding: 5px 12px; border-radius: 999px; white-space: nowrap;
+  .internationalItem .profileLink {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    font-size: 12px; font-weight: 600; color: var(--bronze-deep);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
   }
+  /* .internationalItem .profileLink:hover { border-bottom-color: var(--bronze-deep); } */
+  .internationalItem .profileLink i { font-size: 11px; }
 
   @media (max-width: 780px) {
     .advisoryGrid { grid-template-columns: repeat(2, 1fr); }
+    .internationalGrid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 640px) {
     .leader-grid { grid-template-columns: 1fr; gap: 24px; }
     .convenor-list { grid-template-columns: 1fr; }
     .member-list { columns: 1; }
     .advisoryGrid { grid-template-columns: 1fr; }
-    .intlRow { grid-template-columns: 44px 1fr; }
-    .intlRow .country { grid-column: 2; margin-top: 4px; justify-self: start; }
+    .internationalGrid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -207,174 +214,25 @@
      ============================================================ -->
 <section class="hero_subpage" id="home">
     <div class="hero_content">
-<h1>Organizing Committee</h1>
-    <p>Faculty and staff of the Department of Biotechnology and Medical Engineering responsible for organizing and coordinating the conference.</p>
+<h1>International Committee</h1>
+    <p>Collaborators and reviewers from partner institutions abroad supporting IBEC 2026.</p>
     </div>
-    
 </section>
 
 <div class="wrap_secondary">
 
   <!-- ============================================================
-       ORGANIZING COMMITTEE
-       ============================================================ -->
-  <section class="committeeBlock" id="organizing">
-    <div class="blockHead">
-      <span class="eyebrow">Local Team — NIT Rourkela</span>
-      <h2>Organizing Committee</h2>
-      <p>Faculty and staff of the Department of Biotechnology and Medical Engineering responsible for organizing and coordinating the conference.</p>
-    </div>
-
-    <div class="leader-grid">
-      <div class="leader-block">
-        <img class="photo" src="assets/committee/Umamaheshwar_Rao.jpg" alt="Prof. K. Umamaheshwar Rao">
-        <div>
-          <div class="role">Patron</div>
-          <div class="name">Prof. K. Umamaheshwar Rao</div>
-          <div class="org">Director, NIT Rourkela</div>
-        </div>
-      </div>
-      <div class="leader-block">
-        <img class="photo" src="assets/committee/Devendra_Verma.jpeg" alt="Prof. Devendra Verma">
-        <div>
-          <div class="role">Chairman</div>
-          <div class="name">Prof. Devendra Verma</div>
-          <div class="org">Head of Department, Biotechnology &amp; Medical Engineering</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-title">Convenors</div>
-    <div class="convenor-list">
-      <div class="convenor-item">
-        <img class="photo" src="assets/committee/Amrita Singh.png" alt="Prof. Amrita Singh">
-        <div class="info"><span class="name">Prof. Amrita Singh</span><span class="mail">singham@nitrkl.ac.in</span></div>
-      </div>
-      <div class="convenor-item">
-        <img class="photo" src="assets/committee/Mirz_ Khalid_Baig.jpg" alt="Prof. Mirza Khalid Baig">
-        <div class="info"><span class="name">Prof. Mirza Khalid Baig</span><span class="mail">baigm@nitrkl.ac.in</span></div>
-      </div>
-      <div class="convenor-item">
-        <img class="photo" src="assets/committee/Earu_Banoth.jpg" alt="Prof. Earu Banoth">
-        <div class="info"><span class="name">Prof. Earu Banoth</span><span class="mail">banothe@nitrkl.ac.in</span></div>
-      </div>
-      <div class="convenor-item">
-        <img class="photo" src="assets/committee/Lohit_K._S._Gujjala.jpg" alt="Prof. Lohit K. S. Gujjala">
-        <div class="info"><span class="name">Prof. Lohit K. S. Gujjala</span><span class="mail">singhanamika@nitrkl.ac.in</span></div>
-      </div>
-      <div class="convenor-item">
-        <img class="photo" src="assets/committee/Bala_Chakravarthy_Neelapu.jpg" alt="Prof. Bala Chakravarthy Neelapu">
-        <div class="info"><span class="name">Prof. Bala Chakravarthy Neelapu</span><span class="mail">neelapubc@nitrkl.ac.in</span></div>
-      </div>
-    </div>
-
-    <div class="section-title">Committee Members</div>
-    <div class="member-list">
-      <div class="member-row"><span class="name">A Thirugnanam</span><span class="rank">Professor</span></div>
-      <div class="member-row"><span class="name">Amit Biswas</span><span class="rank">Associate Professor</span></div>
-      <div class="member-row"><span class="name">Angana Sarkar</span><span class="rank">Associate Professor</span></div>
-      <div class="member-row"><span class="name">Anju R. Babu</span><span class="rank">Assistant Professor</span></div>
-      <div class="member-row"><span class="name">Balasubramanian P</span><span class="rank">Associate Professor</span></div>
-      <div class="member-row"><span class="name">Bibhukalyan Prasad Nayak</span><span class="rank">Assistant Professor</span></div>
-      <div class="member-row"><span class="name">Bikash Chandra Maharaj</span><span class="rank">Assistant Professor</span></div>
-      <div class="member-row"><span class="name">Kasturi Dutta</span><span class="rank">Associate Professor</span></div>
-      <div class="member-row"><span class="name">Krishna Pramanik</span><span class="rank">Professor</span></div>
-      <div class="member-row"><span class="name">Kunal Pal</span><span class="rank">Professor</span></div>
-      <div class="member-row"><span class="name">Mukesh Kumar Gupta</span><span class="rank">Professor</span></div>
-      <div class="member-row"><span class="name">Nandini Sarkar</span><span class="rank">Associate Professor</span></div>
-      <div class="member-row"><span class="name">Nivedita Patra</span><span class="rank">Associate Professor</span></div>
-      <div class="member-row"><span class="name">Ravi Kant Avvari</span><span class="rank">Assistant Professor</span></div>
-      <div class="member-row"><span class="name">Sivaraman J.</span><span class="rank">Assistant Professor</span></div>
-      <div class="member-row"><span class="name">Subhankar Paul</span><span class="rank">Professor</span></div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       ADVISORY COMMITTEE
-       ============================================================ -->
-  <section class="committeeBlock" id="advisory">
-    <div class="blockHead">
-      <span class="eyebrow">Advisory Board</span>
-      <h2>Advisory Committee</h2>
-      <p>Senior academics and domain experts guiding the scientific direction of IBEC 2026.</p>
-    </div>
-
-    <div class="advisoryGrid">
-      <div class="advisoryItem">
-        <img class="photo" src="assets/committee/advisory-1.jpg" alt="Full Name">
-        <div class="role">Advisory Member</div>
-        <div class="name">Full Name</div>
-        <div class="org">Designation, Institution</div>
-      </div>
-      <div class="advisoryItem">
-        <img class="photo" src="assets/committee/advisory-2.jpg" alt="Full Name">
-        <div class="role">Advisory Member</div>
-        <div class="name">Full Name</div>
-        <div class="org">Designation, Institution</div>
-      </div>
-      <div class="advisoryItem">
-        <img class="photo" src="assets/committee/advisory-3.jpg" alt="Full Name">
-        <div class="role">Advisory Member</div>
-        <div class="name">Full Name</div>
-        <div class="org">Designation, Institution</div>
-      </div>
-      <div class="advisoryItem">
-        <img class="photo" src="assets/committee/advisory-4.jpg" alt="Full Name">
-        <div class="role">Advisory Member</div>
-        <div class="name">Full Name</div>
-        <div class="org">Designation, Institution</div>
-      </div>
-      <div class="advisoryItem">
-        <img class="photo" src="assets/committee/advisory-5.jpg" alt="Full Name">
-        <div class="role">Advisory Member</div>
-        <div class="name">Full Name</div>
-        <div class="org">Designation, Institution</div>
-      </div>
-      <div class="advisoryItem">
-        <img class="photo" src="assets/committee/advisory-6.jpg" alt="Full Name">
-        <div class="role">Advisory Member</div>
-        <div class="name">Full Name</div>
-        <div class="org">Designation, Institution</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
        INTERNATIONAL COMMITTEE
        ============================================================ -->
   <section class="committeeBlock" id="international">
-    <div class="blockHead">
+    <!-- <div class="blockHead">
       <span class="eyebrow">Global Partners</span>
       <h2>International Committee</h2>
       <p>Collaborators and reviewers from partner institutions abroad supporting IBEC 2026.</p>
-    </div>
+    </div> -->
 
-    <div class="internationalList">
-      <div class="intlRow">
-        <img class="photo" src="assets/committee/intl-1.jpg" alt="Full Name">
-        <div><div class="name">Full Name</div><div class="inst">Designation, Institution</div></div>
-        <span class="country">Country</span>
-      </div>
-      <div class="intlRow">
-        <img class="photo" src="assets/committee/intl-2.jpg" alt="Full Name">
-        <div><div class="name">Full Name</div><div class="inst">Designation, Institution</div></div>
-        <span class="country">Country</span>
-      </div>
-      <div class="intlRow">
-        <img class="photo" src="assets/committee/intl-3.jpg" alt="Full Name">
-        <div><div class="name">Full Name</div><div class="inst">Designation, Institution</div></div>
-        <span class="country">Country</span>
-      </div>
-      <div class="intlRow">
-        <img class="photo" src="assets/committee/intl-4.jpg" alt="Full Name">
-        <div><div class="name">Full Name</div><div class="inst">Designation, Institution</div></div>
-        <span class="country">Country</span>
-      </div>
-      <div class="intlRow">
-        <img class="photo" src="assets/committee/intl-5.jpg" alt="Full Name">
-        <div><div class="name">Full Name</div><div class="inst">Designation, Institution</div></div>
-        <span class="country">Country</span>
-      </div>
+    <div class="internationalGrid" id="internationalGrid">
+        <!-- International Committee members are loaded automatically -->
     </div>
   </section>
 
@@ -446,14 +304,382 @@
     a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('isOpen'));
   });
 
-  // ---- highlight active jump-nav link on scroll ----
-  const jumpLinks = document.querySelectorAll('.jumpNav a');
-  const blocks = document.querySelectorAll('.committeeBlock');
-  window.addEventListener('scroll', () => {
-    let current = blocks[0]?.id;
-    blocks.forEach(b => { if (window.scrollY >= b.offsetTop - 100) current = b.id; });
-    jumpLinks.forEach(a => a.classList.toggle('isActive', a.getAttribute('href') === '#' + current));
-  });
+const INTERNATIONAL_API =
+    "https://script.google.com/macros/s/AKfycbxhO8Jktc474Dw7Ibd5YrHTE6Hky0oAhVqinwi48cWHlNNXxE73s5dxDs5VfLt90mnu/exec";
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        loadInternationalCommittee();
+
+    }
+);
+
+
+/* =========================================================
+   LOAD INTERNATIONAL COMMITTEE
+   ========================================================= */
+
+function loadInternationalCommittee() {
+
+    const container =
+        document.getElementById(
+            "internationalGrid"
+        );
+
+
+    if (!container) {
+
+        console.error(
+            "internationalGrid not found"
+        );
+
+        return;
+
+    }
+
+
+    /*
+     * Create a unique callback name.
+     */
+    const callbackName =
+        "internationalCallback_" +
+        Date.now();
+
+
+    /*
+     * Create callback function.
+     */
+    window[callbackName] =
+        function (members) {
+
+            try {
+
+                /*
+                 * Only display confirmed members.
+                 */
+                const confirmedMembers =
+                    members
+
+                        .filter(function (member) {
+
+                            return String(
+                                member.status || ""
+                            )
+                            .trim()
+                            .toLowerCase() ===
+                            "confirmed";
+
+                        })
+
+
+                        .sort(function (a, b) {
+
+                            return (
+                                Number(
+                                    a.order || 9999
+                                ) -
+
+                                Number(
+                                    b.order || 9999
+                                )
+                            );
+
+                        });
+
+
+                /*
+                 * Clear container.
+                 */
+                container.innerHTML = "";
+
+
+                /*
+                 * Create cards.
+                 */
+                confirmedMembers.forEach(
+                    function (member) {
+
+                        const item =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        item.className =
+                            "internationalItem";
+
+
+                        /*
+                         * Photo.
+                         */
+                        const photo =
+                            member.photo ||
+                            "assets/committee/default.jpg";
+
+
+                        /*
+                         * Profile link.
+                         */
+                        let profileHTML = "";
+
+
+                        if (member.profile) {
+
+                            const profileURL =
+                                safeURL(
+                                    member.profile
+                                );
+
+
+                            if (
+                                profileURL !== "#"
+                            ) {
+
+                                profileHTML = `
+
+                                    <a
+                                        href="${profileURL}"
+                                        class="profileLink"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+
+                                        Profile
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                    </a>
+
+                                `;
+
+                            }
+
+                        }
+
+
+                        /*
+                         * Generate the exact
+                         * existing card structure.
+                         */
+                        item.innerHTML = `
+
+                            <img
+                                class="photo"
+                                src="${escapeHTML(photo)}"
+                                alt="${escapeHTML(member.name)}"
+                                loading="lazy"
+                            >
+
+
+                            <div class="name">
+                                ${escapeHTML(member.name)}
+                            </div>
+
+
+                            <div class="org">
+
+                                ${escapeHTML(member.designation)},
+                                ${escapeHTML(member.institution)}
+
+                            </div>
+
+
+                            <span class="country">
+
+                                ${escapeHTML(member.country)}
+
+                            </span>
+
+
+                            ${profileHTML}
+
+                        `;
+
+
+                        container.appendChild(item);
+
+                    }
+                );
+
+
+                /*
+                 * Empty state.
+                 */
+                if (
+                    confirmedMembers.length === 0
+                ) {
+
+                    container.innerHTML = `
+
+                        <p class="committeeEmpty">
+
+                            International Committee
+                            members will be announced soon.
+
+                        </p>
+
+                    `;
+
+                }
+
+
+            } catch (error) {
+
+                console.error(
+                    "Error creating committee cards:",
+                    error
+                );
+
+
+                showCommitteeError(
+                    container
+                );
+
+            }
+
+
+            /*
+             * Remove callback.
+             */
+            delete window[callbackName];
+
+
+            /*
+             * Remove script element.
+             */
+            const script =
+                document.getElementById(
+                    callbackName
+                );
+
+
+            if (script) {
+
+                script.remove();
+
+            }
+
+        };
+
+
+    /*
+     * Create script element.
+     */
+    const script =
+        document.createElement("script");
+
+
+    script.id =
+        callbackName;
+
+
+    script.src =
+        INTERNATIONAL_API +
+        "?callback=" +
+        encodeURIComponent(
+            callbackName
+        );
+
+
+    /*
+     * Handle loading error.
+     */
+    script.onerror =
+        function () {
+
+            console.error(
+                "Unable to connect to International Committee API"
+            );
+
+
+            delete window[callbackName];
+
+
+            script.remove();
+
+
+            showCommitteeError(
+                container
+            );
+
+        };
+
+
+    /*
+     * Add script to page.
+     */
+    document.body.appendChild(script);
+
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+function showCommitteeError(container) {
+
+    container.innerHTML = `
+
+        <p class="committeeError">
+
+            Unable to load International Committee
+            information.
+
+        </p>
+
+    `;
+
+}
+
+
+/* =========================================================
+   HTML ESCAPE
+   ========================================================= */
+
+function escapeHTML(value) {
+
+    return String(value || "")
+
+        .replace(/&/g, "&amp;")
+
+        .replace(/</g, "&lt;")
+
+        .replace(/>/g, "&gt;")
+
+        .replace(/"/g, "&quot;")
+
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================================
+   SAFE URL
+   ========================================================= */
+
+function safeURL(value) {
+
+    const url =
+        String(value || "").trim();
+
+
+    if (
+        url.startsWith("https://") ||
+        url.startsWith("http://")
+    ) {
+
+        return url;
+
+    }
+
+
+    return "#";
+
+}
 </script>
 
 </body>
