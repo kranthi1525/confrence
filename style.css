@@ -190,6 +190,16 @@
   }
   .heroInner .eyebrow { color: var(--bronze); justify-content: center; }
   .heroInner .eyebrow::before { background: var(--bronze); }
+  .theme_title{
+    color: var(--bronze);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.5;
+    max-width: 640px;
+    color: rgba(255,255,255,0.78);
+    margin-bottom: 22px;
+    letter-spacing: 0.01em;
+  }
   .heroInner h2 {
     font-family: var(--font-body);
     font-weight: 500;
@@ -213,6 +223,7 @@
     height: 18px;
     opacity: 0.85;
   }
+  
   .heroInner h1 em { font-style: normal; color: var(--bronze); }
   .heroInner .heroMeta {
     display: flex; align-items: center; justify-content: center; gap: 26px;
