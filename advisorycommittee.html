@@ -49,6 +49,40 @@
 
     <style>
 
+
+/* =========================================================
+   PERSONAL WEBSITE
+   ========================================================= */
+
+.advisoryWebsite {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 10px;
+
+    font-size: 11.5px;
+    font-weight: 600;
+
+    color: var(--teal-deep);
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.advisoryWebsite i {
+    font-size: 10px;
+}
+
+
+.advisoryWebsite:hover {
+    color: var(--bronze-deep);
+    text-decoration: underline;
+}
         .wrap_secondary {
             max-width: 980px;
             margin: 0 auto;
@@ -495,7 +529,7 @@
 
                 <li>
                     <a href="keynotes.html">
-                        Keynote Speakers
+                        Speakers
                     </a>
                 </li>
 
@@ -526,13 +560,13 @@
 
                         <li>
                             <a href="advisorycommittee.html">
-                                Advisory Committee
+                                National Advisory Committee
                             </a>
                         </li>
 
                         <li>
                             <a href="internationalcommittee.html">
-                                International Committee
+                                International Advisory Committee
                             </a>
                         </li>
 
@@ -694,13 +728,13 @@ Hosted by the Department of Biotechnology and Medical Engineering, NIT Rourkela
     <ul>
       <li><a href="./">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="keynotes.html">Keynote Speakers</a></li>
+      <li><a href="keynotes.html">Speakers</a></li>
       <li class="hasSubmenu">
         <button class="mobileSubToggle">Committee <i class="fa-solid fa-chevron-down"></i></button>
         <ul class="mobileSubmenu">
           <li><a href="comittee.html">Organizing Committee</a></li>
-          <li><a href="advisorycommittee.html">Advisory Committee</a></li>
-          <li><a href="internationalcommittee.html">International Committee</a></li>
+          <li><a href="advisorycommittee.html">National Advisory Committee</a></li>
+          <li><a href="internationalcommittee.html">International Advisory Committee</a></li>
         </ul>
       </li>
       <li class="hasSubmenu">
@@ -1158,368 +1192,416 @@ Hosted by the Department of Biotechnology and Medical Engineering, NIT Rourkela
         function loadAdvisoryCommittee() {
 
 
-            const container =
+    const container =
+        document.getElementById(
+            "advisoryGrid"
+        );
+
+
+    if (!container) {
+
+        console.log(
+            "advisoryGrid not found"
+        );
+
+        return;
+
+    }
+
+
+    /* =============================================
+       JSONP CALLBACK
+       ============================================= */
+
+    const callbackName =
+        "advisoryCallback";
+
+
+    window[callbackName] =
+        function (members) {
+
+
+            console.log(
+                "Advisory Committee:",
+                members
+            );
+
+
+            /* =========================================
+               REMOVE LOADING BAR
+               ========================================= */
+
+            const loading =
                 document.getElementById(
-                    "advisoryGrid"
+                    "advisoryLoading"
                 );
 
 
-            if (!container) {
+            if (loading) {
 
-                console.log(
-                    "advisoryGrid not found"
-                );
-
-                return;
+                loading.remove();
 
             }
 
 
-            /* =============================================
-               JSONP CALLBACK
-               ============================================= */
+            /* =========================================
+               CLEAR GRID
+               ========================================= */
 
-            const callbackName =
-                "advisoryCallback";
-
-
-            window[callbackName] =
-                function (members) {
+            container.innerHTML = "";
 
 
-                    console.log(
-                        "Advisory Committee:",
-                        members
-                    );
+            /* =========================================
+               ONLY CONFIRMED MEMBERS
+               ========================================= */
 
+            const confirmedMembers =
+                members.filter(
+                    function (member) {
 
-                    /* =========================================
-                       REMOVE LOADING BAR
-                       ========================================= */
-
-                    const loading =
-                        document.getElementById(
-                            "advisoryLoading"
-                        );
-
-
-                    if (loading) {
-
-                        loading.remove();
+                        return String(
+                            member.status || ""
+                        )
+                        .trim()
+                        .toLowerCase() ===
+                        "confirmed";
 
                     }
-
-
-                    /* =========================================
-                       CLEAR GRID
-                       ========================================= */
-
-                    container.innerHTML = "";
-
-
-                    /* =========================================
-                       ONLY CONFIRMED MEMBERS
-                       ========================================= */
-
-                    const confirmedMembers =
-                        members.filter(
-                            function (member) {
-
-                                return String(
-                                    member.status || ""
-                                )
-                                .trim()
-                                .toLowerCase() ===
-                                "confirmed";
-
-                            }
-                        );
-
-
-                    /* =========================================
-                       SORT BY DISPLAY ORDER
-                       ========================================= */
-
-                    confirmedMembers.sort(
-                        function (a, b) {
-
-                            return (
-
-                                Number(
-                                    a.order || 9999
-                                )
-
-                                -
-
-                                Number(
-                                    b.order || 9999
-                                )
-
-                            );
-
-                        }
-                    );
-
-
-                    /* =========================================
-                       CREATE CARDS
-                       ========================================= */
-
-                    confirmedMembers.forEach(
-                        function (member) {
-
-
-                            const card =
-                                document.createElement(
-                                    "div"
-                                );
-
-
-                            card.className =
-                                "advisoryItem";
-
-
-                            /* Photo */
-
-                            const photo =
-                                member.photo ||
-                                "assets/committee/default.jpg";
-
-
-                            /* Name */
-
-                            const name =
-                                member.name || "";
-
-
-                            /* Designation */
-
-                            const designation =
-                                member.designation || "";
-
-
-                            /* Institution */
-
-                            const institution =
-                                member.institution || "";
-
-
-                            /* =================================
-                               CARD HTML
-                               ================================= */
-
-                            card.innerHTML = `
-
-                                <img
-                                    class="photo"
-                                    src="${photo}"
-                                    alt="${name}"
-                                    loading="lazy"
-                                >
-
-
-                                <div class="role">
-                                    Advisory Member
-                                </div>
-
-
-                                <div class="name">
-                                    ${name}
-                                </div>
-
-
-                                <div class="org">
-
-                                    ${designation}
-
-                                    ${
-                                        designation &&
-                                        institution
-                                            ? ", "
-                                            : ""
-                                    }
-
-                                    ${institution}
-
-                                </div>
-
-                            `;
-
-
-                            /* =================================
-                               ADD CARD
-                               ================================= */
-
-                            container.appendChild(
-                                card
-                            );
-
-
-                            /* =================================
-                               IMAGE FALLBACK
-                               ================================= */
-
-                            const image =
-                                card.querySelector(
-                                    ".photo"
-                                );
-
-
-                            if (image) {
-
-                                image.addEventListener(
-                                    "error",
-                                    function () {
-
-                                        if (
-                                            image.dataset.fallback
-                                        ) {
-
-                                            return;
-
-                                        }
-
-
-                                        image.dataset.fallback =
-                                            "true";
-
-
-                                        image.src =
-                                            "assets/committee/default.jpg";
-
-                                    }
-                                );
-
-                            }
-
-                        }
-                    );
-
-
-                    /* =========================================
-                       NO CONFIRMED MEMBERS
-                       ========================================= */
-
-                    if (
-                        confirmedMembers.length === 0
-                    ) {
-
-                        container.innerHTML = `
-
-                            <div
-                                style="
-                                    grid-column: 1 / -1;
-                                    text-align: center;
-                                    padding: 40px;
-                                    color: var(--ink-soft);
-                                "
-                            >
-
-                                Advisory Committee members
-                                will be announced soon.
-
-                            </div>
-
-                        `;
-
-                    }
-
-
-                    /* =========================================
-                       REMOVE JSONP CALLBACK
-                       ========================================= */
-
-                    delete window[
-                        callbackName
-                    ];
-
-                };
-
-
-            /* =============================================
-               CREATE JSONP SCRIPT
-               ============================================= */
-
-            const script =
-                document.createElement(
-                    "script"
                 );
 
 
-            script.src =
-                ADVISORY_API +
-                "?callback=" +
-                callbackName;
+            /* =========================================
+               SORT BY DISPLAY ORDER
+               ========================================= */
 
+            confirmedMembers.sort(
+                function (a, b) {
 
-            /* =============================================
-               API ERROR
-               ============================================= */
+                    return (
 
-            script.onerror =
-                function () {
+                        Number(
+                            a.order || 9999
+                        )
 
+                        -
 
-                    console.error(
-                        "Unable to load Advisory Committee API."
+                        Number(
+                            b.order || 9999
+                        )
+
                     );
 
+                }
+            );
 
-                    /* Remove loading bar */
 
-                    const loading =
-                        document.getElementById(
-                            "advisoryLoading"
+            /* =========================================
+               CREATE CARDS
+               ========================================= */
+
+            confirmedMembers.forEach(
+                function (member) {
+
+
+                    const card =
+                        document.createElement(
+                            "div"
                         );
 
 
-                    if (loading) {
-
-                        loading.remove();
-
-                    }
+                    card.className =
+                        "advisoryItem";
 
 
-                    /* Show error */
+                    /* =================================
+                       MEMBER DATA
+                       ================================= */
 
-                    container.innerHTML = `
+                    const photo =
+                        member.photo ||
+                        "assets/committee/default.jpg";
 
-                        <div
-                            style="
-                                grid-column: 1 / -1;
-                                text-align: center;
-                                padding: 40px;
-                                color: var(--ink-soft);
-                            "
+
+                    const name =
+                        member.name || "";
+
+
+                    const designation =
+                        member.designation || "";
+
+
+                    const institution =
+                        member.institution || "";
+
+
+                    const website =
+                        String(
+                            member.website || ""
+                        ).trim();
+
+
+                    /* =================================
+                       CARD HTML
+                       ================================= */
+
+                    card.innerHTML = `
+
+                        <img
+                            class="photo"
+                            src="${photo}"
+                            alt="${name}"
+                            loading="lazy"
                         >
 
-                            Unable to load Advisory Committee
-                            information.
+
+                        <div class="role">
+                            Advisory Member
+                        </div>
+
+
+                        <div class="name">
+                            ${name}
+                        </div>
+
+
+                        <div class="org">
+
+                            ${designation}
+
+                            ${
+                                designation &&
+                                institution
+                                    ? ", "
+                                    : ""
+                            }
+
+                            ${institution}
 
                         </div>
 
                     `;
 
 
-                    delete window[
-                        callbackName
-                    ];
+                    /* =================================
+                       PERSONAL WEBSITE
+                       ================================= */
+
+                    if (website) {
+
+                        const websiteLink =
+                            document.createElement(
+                                "a"
+                            );
 
 
-                    script.remove();
+                        websiteLink.href =
+                            website;
 
-                };
+
+                        websiteLink.target =
+                            "_blank";
 
 
-            /* =============================================
-               ADD SCRIPT
-               ============================================= */
+                        websiteLink.rel =
+                            "noopener noreferrer";
 
-            document.body.appendChild(
-                script
+
+                        websiteLink.className =
+                            "advisoryWebsite";
+
+
+                        websiteLink.innerHTML = `
+
+                            <i
+                                class="fa-solid fa-globe"
+                            ></i>
+
+                            Personal Website
+
+                        `;
+
+
+                        card.appendChild(
+                            websiteLink
+                        );
+
+                    }
+
+
+                    /* =================================
+                       ADD CARD
+                       ================================= */
+
+                    container.appendChild(
+                        card
+                    );
+
+
+                    /* =================================
+                       IMAGE FALLBACK
+                       ================================= */
+
+                    const image =
+                        card.querySelector(
+                            ".photo"
+                        );
+
+
+                    if (image) {
+
+                        image.addEventListener(
+                            "error",
+                            function () {
+
+                                if (
+                                    image.dataset.fallback
+                                ) {
+
+                                    return;
+
+                                }
+
+
+                                image.dataset.fallback =
+                                    "true";
+
+
+                                image.src =
+                                    "assets/committee/default.jpg";
+
+                            }
+                        );
+
+                    }
+
+                }
             );
 
-        }
+
+            /* =========================================
+               NO CONFIRMED MEMBERS
+               ========================================= */
+
+            if (
+                confirmedMembers.length === 0
+            ) {
+
+                container.innerHTML = `
+
+                    <div
+                        style="
+                            grid-column: 1 / -1;
+                            text-align: center;
+                            padding: 40px;
+                            color: var(--ink-soft);
+                        "
+                    >
+
+                        Advisory Committee members
+                        will be announced soon.
+
+                    </div>
+
+                `;
+
+            }
+
+
+            /* =========================================
+               REMOVE JSONP CALLBACK
+               ========================================= */
+
+            delete window[
+                callbackName
+            ];
+
+        };
+
+
+    /* =============================================
+       CREATE JSONP SCRIPT
+       ============================================= */
+
+    const script =
+        document.createElement(
+            "script"
+        );
+
+
+    script.src =
+        ADVISORY_API +
+        "?callback=" +
+        callbackName;
+
+
+    /* =============================================
+       API ERROR
+       ============================================= */
+
+    script.onerror =
+        function () {
+
+
+            console.error(
+                "Unable to load Advisory Committee API."
+            );
+
+
+            /* Remove loading bar */
+
+            const loading =
+                document.getElementById(
+                    "advisoryLoading"
+                );
+
+
+            if (loading) {
+
+                loading.remove();
+
+            }
+
+
+            /* Show error */
+
+            container.innerHTML = `
+
+                <div
+                    style="
+                        grid-column: 1 / -1;
+                        text-align: center;
+                        padding: 40px;
+                        color: var(--ink-soft);
+                    "
+                >
+
+                    Unable to load Advisory Committee
+                    information.
+
+                </div>
+
+            `;
+
+
+            delete window[
+                callbackName
+            ];
+
+
+            script.remove();
+
+        };
+
+
+    /* =============================================
+       ADD SCRIPT
+       ============================================= */
+
+    document.body.appendChild(
+        script
+    );
+
+}
 
     </script>
 
