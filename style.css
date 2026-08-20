@@ -605,7 +605,7 @@
     border-color: rgba(44,110,103,0.3);
   }
   .sponsorLogo {
-    height: 64px; width: 100%;
+    height: 84px; width: 100%;
     display: flex; align-items: center; justify-content: center;
   }
   .sponsorLogo img {
@@ -637,7 +637,12 @@
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
   }
- 
+ .publishersCard:hover {
+    background: var(--paper);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(19,42,61,0.08);
+    border-color: rgba(44,110,103,0.3);
+  }
   @media (max-width: 900px) { .sponsorsGrid { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 620px) { .sponsorsGrid { grid-template-columns: repeat(2, 1fr); } }
  
